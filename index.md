@@ -4,9 +4,11 @@ layout: default
 Biagio e Carmine fanno programmi perché non hanno un cazzo da fare
 
 
-<p>Al momento hanno realizzato</p>
-<ul><li>[un programma che converte numeri binari in decimali e decimali in binari](https://github.com/BiagioeCarmine/convertitore-binario-decimale)</li>
+Al momento hanno realizzato
+
+<ul><li>[Un convertitore binario-decimale decimale-binario](https://github.com/BiagioeCarmine/convertitore-binario-decimale).
+  </li>
   </ul>
-</p>
+
   
   E basta (per ora)
