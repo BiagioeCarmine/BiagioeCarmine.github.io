@@ -1,0 +1,69 @@
+<head>
+  <title>Test 1.0</title>
+  <style>
+  body  {
+      background-color: black;
+      color: yellow;
+  }
+  p  {
+      background-color: darkblue;
+      color: white;
+  }
+      </style>
+
+</head>
+<body>
+  <p>
+    <h1>CONVERSIONE DECIMALE-BINARIO BINARIO-DECIMALE</h1>
+    <form id="conversione">
+	     <fieldset>
+		       <legend>Quale conversione vuoi eseguire?</legend>
+		         <input type="radio" id="decbin" name="tipoconversione" value="decbin"/>Decimale->Binario<br>
+		          <input type="radio" id="bindec" name="tipoconversione" value="bindec"/>Binario->Decimale<br>
+              <br><legend>Che numero vuoi convertire?</legend>
+              <input type="text" id="numero" name="numerodaconvertire" ><br><br>
+              <input type="submit">
+	</fieldset>
+</form>
+
+
+  </p>
+
+<script>
+function indec(numerobin) {
+  return numerobin;
+}
+function inbin(numerodec) {
+  return numerodec+50;
+
+}
+function conversionamento(numerodaconvertire,bindec) {
+  alert("Conversione chiamato");
+  if(bindec==1) {
+    return indec(numerodaconvertire);
+  }
+  if(bindec==0) {
+    return inbin(numerodaconvertire);
+  }
+}
+function processForm(e) {
+      if (e.preventDefault) e.preventDefault();
+      alert("processForm chiamato");
+      var decbin = document.getElementById("decbin").checked;
+      var bindec = document.getElementById("bindec").checked;
+      if(bindec) numeroconvertito = conversionamento(parseInt(document.getElementById("numero").value),1);
+      if(decbin) numeroconvertito = conversionamento(parseInt(document.getElementById("numero").value),0);
+      alert("Il tuo numero convertito è"+numeroconvertito);
+      return false;
+}
+var form = document.getElementById('conversione');
+if (form.attachEvent) {
+    form.attachEvent("submit", processForm);
+} else {
+    form.addEventListener("submit", processForm);
+}
+
+</script>
+
+
+</body>
