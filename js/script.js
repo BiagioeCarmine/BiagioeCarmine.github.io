@@ -3,7 +3,6 @@ function indec(numerobin) {
 }
 function inbin(numerodec) {
   return numerodec+50;
-
 }
 function conversionamento(numerodaconvertire,bindec) {
   alert("Conversione chiamato");
