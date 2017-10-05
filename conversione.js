@@ -1,13 +1,27 @@
+function vedisebin(numerodacontrollare) {
+  while(numerodacontrollare>0)  {
+    if(numerodacontrollare%10!=0 && numerodacontrollare%10!=1)  {
+      return false;
+    }
+    numerodacontrollare=parseInt(numerodacontrollare/10);
+  }
+  return true;
+}
+
 function indec(numerobin) {                       // indec() e inbin() non sono difficili da spiegare in fondo
   var numerocorrente = numerobin;
   var numerodauscire = 0;
   var i = 0;
+  if (vedisebin(numerobin)) {
   while(numerocorrente>0) {
     numerodauscire=numerodauscire+numerocorrente%10*Math.pow(2,i);
     i++;
     numerocorrente=parseInt(numerocorrente/10);
   }
   return numerodauscire;
+} else {
+    return "non va bene";
+  }
 }
 function inbin(numerodec) {                     // indec() e inbin() non sono difficili da spiegare in fondo
   var numerocorrente = numerodec;
@@ -34,7 +48,11 @@ function processForm(e) {
       var bindec = document.getElementById("bindec").checked; // la variabile bindec è una booleana che è true se il tasto binario->decimale è stato cliccato
       if(bindec) numeroconvertito = conversionamento(parseInt(document.getElementById("numero").value),1);  //  chiama la funzione conversionamento dando un numero e 0
       if(decbin) numeroconvertito = conversionamento(parseInt(document.getElementById("numero").value),0);  // se l'utente ha selezionato decbin e 1 se l'utente ha selezionato bindec
-      alert("Il tuo numero convertito è"+numeroconvertito);
+      if(numeroconvertito=="non va bene") {
+        alert("non hai messo un numero binario");
+        return false;
+      }
+      alert("Il tuo numero convertito è "+numeroconvertito);
       return false;
 }
 // La parte qua sotto aspetta che l'utente clicchi il tasto Invia e avvia la funzione processForm()
