@@ -3,7 +3,6 @@
       color: #26ff00;
       font-family: 'Oxygen', sans-serif;
   }
-  p  {
-      background-color: darkblue;
-      color: white;
+  div {
+    box-shadow: 10px 10px 5px #888;
   }
